@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Parent_Services_Yoga_Co_Ordinator_drop_in_courses</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Parent Services Yoga Co-Ordinator drop in courses</label>
+        <sharedTo>
+            <group>Yoga_Co_Ordinator_Course_drop_in_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Course_Type__c</field>
+            <operation>equals</operation>
+            <value>Drop in</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

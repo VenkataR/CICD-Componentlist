@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Contact_Record_TypeEQUALSVolunteer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contact Record TypeEQUALSVolunteer</label>
+        <sharedTo>
+            <group>Volunteer_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Volunteer</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>share_community_contact_to_volunteer_user</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>share community contact to volunteer user</label>
+        <sharedTo>
+            <group>Volunteer_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>LastName</field>
+            <operation>equals</operation>
+            <value>Agnesbctest</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,22 @@
+<apex:page controller="showHTMLPicklistPageController">
+    <apex:outputPanel id="selectedValue">
+        {!selectedValue}
+    </apex:outputPanel>
+    <br/>
+    <apex:form >
+        <apex:actionFunction name="setValue" action="{!displayValue}" reRender="selectedValue">
+        	<apex:param name="selVal" value="selVal" assignTo="{!selectedValue}"/>
+    	</apex:actionFunction>    
+        <apex:inputHidden value="{!selectedValue}"/>
+        <apex:variable value="{!1}" var="rowNum"/>
+   		<select onchange="setValue(this.value)">
+        	<option value="">--None--</option>
+            <apex:repeat value="{!membershipPmtCtryList}" var="mbrshpPtmCtgy">
+                <option style='font-weight:bold; background:#abcb63;' value="{!mbrshpPtmCtgy.MasterLabel}">{!mbrshpPtmCtgy.MasterLabel}</option>
+                <apex:repeat value="{!membershipFeeList}" var="mbrshpFee">                
+                <option style='display:{!if(mbrshpPtmCtgy.Id=mbrshpFee.Membership_Payment_Category__c,counter,displayValue)};' value="{!mbrshpFee.Membership_Payment_Type__c} ({!mbrshpFee.MasterLabel})">{!mbrshpFee.Membership_Payment_Type__c} ({!mbrshpFee.MasterLabel})</option>
+                </apex:repeat>
+            </apex:repeat>
+    	</select>
+    </apex:form>
+</apex:page>
